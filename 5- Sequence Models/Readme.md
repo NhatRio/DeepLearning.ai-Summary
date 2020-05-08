@@ -216,7 +216,7 @@ Here are the course summary as its given on the course [link](https://www.course
     ![](Images/14.png)
     - `i`  is for all elements in the corpus, `t` - for all timesteps.
 - To use this model:
-  1.  For predicting the chance of **next word**, we feed the sentence to the RNN and then get the final y<sup>^\<t></sup> hot vector and sort it by maximum probability.
+  1.  For predicting the chance of **next word**, we feed the sentence to the RNN and then get the final y<sup>^\<t></sup> vector of probability of a next word given one/some previous words. Ex. P(cats), P(a) in Y^1, P(cats|cats), P(a|cats) in Y^2,...
   2.  For taking the **probability of a sentence**, we compute this:
       - p(y<sup><1></sup>, y<sup><2></sup>, y<sup><3></sup>) = p(y<sup><1></sup>) * p(y<sup><2></sup> | y<sup><1></sup>) * p(y<sup><3></sup> | y<sup><1></sup>, y<sup><2></sup>)
       - This is simply feeding the sentence into the RNN and multiplying the probabilities (outputs).
